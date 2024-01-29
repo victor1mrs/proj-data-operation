@@ -5,14 +5,14 @@ import { Button } from "./ui/button";
 const Dashboard = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex h-screen">
-      <aside className="w-64 p-6 bg-[#E2E7F0] text-[#2D3648]">
-        <div className="mb-8 flex justify-center">
-          <Button>LOGO</Button>
+      <aside className="w-56 py-6 px-4 bg-primary/5 text-[#2D3648]">
+        <div className="mb-8 flex">
+          <Button size="lg">LOGO</Button>
         </div>
-        <nav className="flex flex-col items-start justify-between p-6 space-y-1 ">
-          <ul>
+        <nav className="flex flex-col items-start justify-between space-y-1 ">
+          <ul className="w-full">
             <li className="py-3 px-6">
-              <Link className="flex items-center gap-2" href="/menu">
+              <Link className="flex gap-2" href="/menu">
                 <Clock className="h-5 w-5" />
                 <span>Asignaciones</span>
               </Link>
