@@ -1,11 +1,18 @@
-"use client"
+"use client";
 
-import { ResponsiveLine } from "@nivo/line"
-import { CardContent, Card } from "@/components/ui/card"
-import { SelectValue, SelectTrigger, Select } from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
-import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
-import { Search } from 'lucide-react';
+import { ResponsiveLine } from "@nivo/line";
+import { CardContent, Card } from "@/components/ui/card";
+import { SelectValue, SelectTrigger, Select } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import {
+  TableHead,
+  TableRow,
+  TableHeader,
+  TableCell,
+  TableBody,
+  Table,
+} from "@/components/ui/table";
+import { Search } from "lucide-react";
 
 export default function Home() {
   return (
@@ -79,7 +86,7 @@ export default function Home() {
         </Table>
       </div>
     </div>
-  )
+  );
 }
 
 function LineChart(props: any) {
@@ -152,5 +159,5 @@ function LineChart(props: any) {
         role="application"
       />
     </div>
-  )
+  );
 }
