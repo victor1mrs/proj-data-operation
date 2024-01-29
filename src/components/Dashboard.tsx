@@ -11,20 +11,20 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
             <Button>LOGO</Button>
           </div>
           <nav className="flex flex-col items-start justify-between p-6 space-y-1 ">
-            <ul className="space-y-2">
-              <li>
+            <ul>
+              <li className="py-3 px-6">
                 <Link className="flex items-center gap-2" href="/menu">
                   <Clock className="h-5 w-5" />
                   <span>Asignaciones</span>
                 </Link>
               </li>
-              <li>
+              <li className="py-3 px-6">
                 <Link className="flex items-center gap-2" href="#">
                   <User className="h-5 w-5" />
                   <span>Personas</span>
                 </Link>
               </li>
-              <li>
+              <li className="py-3 px-6">
                 <Link className="flex items-center gap-2" href="settings">
                   <Wand2 className="h-5 w-5" />
                   <span>Predicción</span>
