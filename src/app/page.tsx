@@ -41,7 +41,7 @@ const mockedData1 = [
 export default function Home() {
   return (
     <div className="flex flex-col py-8 px-16">
-      <div className="flex w-full gap-6 mb-6">
+      <div className="grid lg:grid-cols-3 grid-cols-1 w-full gap-6 mb-6">
         <LineChartCard title="General difference" mainInfo="-8.2%" data={mockedData1} />
         <LineChartCard title="Dato General 2" mainInfo="12%" data={mockedData1} />
         <LineChartCard title="Dato General 3" mainInfo="26%" data={mockedData1} />
