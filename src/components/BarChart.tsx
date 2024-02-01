@@ -1,67 +1,131 @@
 "use client"
 
-import { ResponsiveBar } from "@nivo/bar"
+import { ResponsiveBar } from '@nivo/bar'
 
-const BarChart = () => {
-  return(
-    <div>
-      <GroupedbarChart className="w-full h-[300px]" />
-    </div>
-  )
-}
 
-export default BarChart;
-
-const  GroupedbarChart = (props: any) => {
-  return (
-    <div {...props}>
-      <ResponsiveBar
-        data={[
-          { name: "Jan", desktop: 111, mobile: 99 },
-          { name: "Feb", desktop: 157, mobile: 87 },
-          { name: "Mar", desktop: 129, mobile: 89 },
-          { name: "Apr", desktop: 187, mobile: 151 },
-          { name: "May", desktop: 119, mobile: 127 },
-          { name: "Jun", desktop: 20, mobile: 121 },
+// make sure parent container have a defined height when using
+// responsive component, otherwise height will be 0 and
+// no chart will be rendered.
+// website examples showcase many properties,
+// you'll often use just a few of them.
+const BarChart = ({ data/* see data tab */ }: any) => (
+    <ResponsiveBar
+        data={data}
+        keys={[
+            'AGO 23',
+            'SET 23',
+            'OCT 23',
+            'NOV 23'
         ]}
-        keys={["desktop", "mobile"]}
-        indexBy="name"
-        groupMode="grouped"
-        margin={{ top: 0, right: 0, bottom: 40, left: 40 }}
+        indexBy="team"
+        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
-        colors={["#2563eb", "#e11d48"]}
-        axisBottom={{
-          tickSize: 0,
-          tickPadding: 16,
+        groupMode="grouped"
+        valueScale={{ type: 'linear' }}
+        indexScale={{ type: 'band', round: true }}
+        colors={{ scheme: 'pastel1' }}
+        // defs={[
+        //     {
+        //         id: 'dots',
+        //         type: 'patternDots',
+        //         background: 'inherit',
+        //         color: '#38bcb2',
+        //         size: 4,
+        //         padding: 1,
+        //         stagger: true
+        //     },
+        //     {
+        //         id: 'lines',
+        //         type: 'patternLines',
+        //         background: 'inherit',
+        //         color: '#eed312',
+        //         rotation: -45,
+        //         lineWidth: 6,
+        //         spacing: 10
+        //     }
+        // ]}
+        // fill={[
+        //     {
+        //         match: {
+        //             id: 'fries'
+        //         },
+        //         id: 'dots'
+        //     },
+        //     {
+        //         match: {
+        //             id: 'sandwich'
+        //         },
+        //         id: 'lines'
+        //     }
+        // ]}
+        borderColor={{
+            from: 'color',
+            modifiers: [
+                [
+                    'darker',
+                    1.6
+                ]
+            ]
         }}
-        axisLeft={{
-          tickSize: 0,
-          tickValues: 4,
-          tickPadding: 16,
+        axisTop={null}
+        axisRight={null}
+        // axisBottom={{
+        //     tickSize: 5,
+        //     tickPadding: 5,
+        //     tickRotation: 0,
+        //     legend: 'country',
+        //     legendPosition: 'middle',
+        //     legendOffset: 32,
+        //     truncateTickAt: 0
+        // }}
+        // axisLeft={{
+        //     tickSize: 5,
+        //     tickPadding: 5,
+        //     tickRotation: 0,
+        //     legend: 'food',
+        //     legendPosition: 'middle',
+        //     legendOffset: -40,
+        //     truncateTickAt: 0
+        // }}
+        labelSkipWidth={12}
+        labelSkipHeight={12}
+        labelTextColor={{
+            from: 'color',
+            modifiers: [
+                [
+                    'darker',
+                    1.6
+                ]
+            ]
         }}
-        gridYValues={4}
-        theme={{
-          tooltip: {
-            chip: {
-              borderRadius: "9999px",
-            },
-            container: {
-              fontSize: "12px",
-              textTransform: "capitalize",
-              borderRadius: "6px",
-            },
-          },
-          grid: {
-            line: {
-              stroke: "#f3f4f6",
-            },
-          },
-        }}
-        tooltipLabel={({ id }) => `${id}`}
-        enableLabel={false}
+        legends={[
+            {
+                dataFrom: 'keys',
+                anchor: 'bottom-right',
+                direction: 'column',
+                justify: false,
+                translateX: 120,
+                translateY: 0,
+                itemsSpacing: 2,
+                itemWidth: 100,
+                itemHeight: 20,
+                itemDirection: 'left-to-right',
+                itemOpacity: 0.85,
+                symbolSize: 20,
+                effects: [
+                    {
+                        on: 'hover',
+                        style: {
+                            itemOpacity: 1
+                        }
+                    }
+                ]
+            }
+        ]}
         role="application"
-        ariaLabel="A grouped bar chart"
-      />
-    </div>
-  )
-}
+        ariaLabel="Nivo bar chart demo"
+        barAriaLabel={e=>e.id+": "+e.formattedValue+" in team: "+e.indexValue}
+    />
+)
+
+export default BarChart

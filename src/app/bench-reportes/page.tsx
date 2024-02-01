@@ -31,7 +31,9 @@ const BenchReports = () => {
           <Button variant="outline">Todos los stacks</Button>
         </div>
       </div>
-      <BarChart/>
+        <div className="h-96">
+          <BarChart data={data} />
+        </div>
       <div className="mt-6">
         <Table>
           <TableHeader>
@@ -95,3 +97,71 @@ const BenchReports = () => {
 
 export default BenchReports;
 
+const data = [
+  {
+    "team": "Design",
+    "AGO 23": 48,
+    "ago23Color": "hsl(315, 70%, 50%)",
+    "SET 23": 90,
+    "set23Color": "hsl(293, 70%, 50%)",
+    "OCT 23": 74,
+    "oct23Color": "hsl(197, 70%, 50%)",
+    "NOV 23": 54,
+    "nov23Color": "hsl(239, 70%, 50%)"
+  },
+  {
+    "team": "Web",
+    "AGO 23": 59,
+    "ago23Color": "hsl(147, 70%, 50%)",
+    "SET 23": 170,
+    "set23Color": "hsl(169, 70%, 50%)",
+    "OCT 23": 30,
+    "oct23Color": "hsl(98, 70%, 50%)",
+    "NOV 23": 172,
+    "nov23Color": "hsl(257, 70%, 50%)"
+  },
+  {
+    "team": "Mobile",
+    "AGO 23": 62,
+    "ago23Color": "hsl(61, 70%, 50%)",
+    "SET 23": 172,
+    "set23Color": "hsl(173, 70%, 50%)",
+    "OCT 23": 133,
+    "oct23Color": "hsl(311, 70%, 50%)",
+    "NOV 23": 175,
+    "nov23Color": "hsl(61, 70%, 50%)"
+  },
+  {
+    "team": "QA",
+    "AGO 23": 30,
+    "ago23Color": "hsl(187, 70%, 50%)",
+    "SET 23": 83,
+    "set23Color": "hsl(298, 70%, 50%)",
+    "OCT 23": 64,
+    "oct23Color": "hsl(286, 70%, 50%)",
+    "NOV 23": 23,
+    "nov23Color": "hsl(13, 70%, 50%)"
+  },
+  {
+    "team": "ML & Data",
+    "AGO 23": 130,
+    "ago23Color": "hsl(130, 70%, 50%)",
+    "SET 23": 132,
+    "set23Color": "hsl(74, 70%, 50%)",
+    "OCT 23": 105,
+    "oct23Color": "hsl(339, 70%, 50%)",
+    "NOV 23": 174,
+    "nov23Color": "hsl(106, 70%, 50%)"
+  },
+  {
+    "team": "DevOps",
+    "AGO 23": 129,
+    "ago23Color": "hsl(34, 70%, 50%)",
+    "SET 23": 152,
+    "set23Color": "hsl(347, 70%, 50%)",
+    "OCT 23": 81,
+    "oct23Color": "hsl(13, 70%, 50%)",
+    "NOV 23": 4,
+    "nov23Color": "hsl(272, 70%, 50%)"
+  }
+]
