@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Clock, User, Wand2, CircleUser, Bell } from "lucide-react";
+import { Clock, User, Wand2, CircleUser, Bell, ClipboardList } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Dashboard = ({ children }: { children: React.ReactNode }) => {
@@ -7,7 +7,9 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
     <div className="flex h-screen">
       <aside className="w-56 py-6 px-4 bg-primary/5 text-[#2D3648]">
         <div className="mb-8 flex">
-          <Button size="lg">LOGO</Button>
+          <Link href="/">
+            <Button size="lg">LOGO</Button>
+          </Link>
         </div>
         <nav className="flex flex-col items-start justify-between space-y-1 ">
           <ul className="w-full">
@@ -27,6 +29,12 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
               <Link className="flex items-center gap-2" href="settings">
                 <Wand2 className="h-5 w-5" />
                 <span>Predicción</span>
+              </Link>
+            </li>
+            <li className="py-3 px-6 bg-slate-300">
+              <Link className="flex items-center gap-2" href="bench-reportes">
+                <ClipboardList className="h-5 w-5" />
+                <span>Test - Bench Reports</span>
               </Link>
             </li>
           </ul>
