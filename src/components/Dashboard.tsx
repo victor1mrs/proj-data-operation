@@ -40,7 +40,7 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
           </ul>
         </nav>
       </aside>
-      <div className="flex-1">
+      <div className="flex-1 overflow-y-scroll">
         <header className="flex justify-end items-center h-16 px-6 text-[#1A202C]">
           <div />
           <div className="flex items-center space-x-4">
