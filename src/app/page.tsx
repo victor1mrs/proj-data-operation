@@ -25,17 +25,6 @@ const mockedData1 = [
       { x: "Jun", y: 154 },
     ],
   },
-  {
-    id: "Mobile",
-    data: [
-      { x: "Jan", y: 60 },
-      { x: "Feb", y: 48 },
-      { x: "Mar", y: 177 },
-      { x: "Apr", y: 78 },
-      { x: "May", y: 96 },
-      { x: "Jun", y: 204 },
-    ],
-  },
 ]
 
 export default function Home() {

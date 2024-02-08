@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Clock, User, Wand2, CircleUser, Bell } from "lucide-react";
+import { Clock, User, Wand2, CircleUser, Bell, BarChart } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Dashboard = ({ children }: { children: React.ReactNode }) => {
@@ -27,6 +27,12 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
               <Link className="flex items-center gap-2" href="settings">
                 <Wand2 className="h-5 w-5" />
                 <span>Predicción</span>
+              </Link>
+            </li>
+            <li className="py-3 px-6">
+              <Link className="flex items-center gap-2" href="charts">
+                <BarChart className="h-5 w-5" />
+                <span>Charts</span>
               </Link>
             </li>
           </ul>
