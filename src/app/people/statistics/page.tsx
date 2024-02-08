@@ -68,7 +68,7 @@ const PeopleStatistics = () => {
           <ChevronDown className="text-gray-500" />
         </div>
         <div className="grid grid-cols-3 gap-6 fill mb-6 w-full">
-          <PieChartCard title="Inversi&oacute;n" data={data} />
+          <PieChartCard data={data} />
         </div>
       </div>
     </div>
